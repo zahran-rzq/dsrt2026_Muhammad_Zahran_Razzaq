@@ -6,5 +6,5 @@ This project contains circuit design files and documentation for the DSRT 2026 a
 ![Graph Analysis](graph.png)
 
 ### Circuit Screenshot
-![Circuit Screenshot](ss_dsrt.png)
+![Circuit Screenshot](circuit.png)
 

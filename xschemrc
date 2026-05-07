@@ -1,0 +1,17 @@
+# --- LOCAL PROJECT CONFIG: SKY130 ---
+
+catch {source ~/.xschem/xschemrc}
+
+set env(PDK_ROOT) /foss/pdks
+set env(PDK) sky130A
+set PDK_ROOT /foss/pdks
+set PDK sky130A
+
+append XSCHEM_LIBRARY_PATH :$PDK_ROOT/$PDK/libs.tech/xschem
+
+append XSCHEM_LIBRARY_PATH :$env(PWD)
+
+set SKYWATER_MODELS $PDK_ROOT/$PDK/libs.tech/ngspice
+set SKYWATER_STDCELLS $PDK_ROOT/$PDK/libs.ref/sky130_fd_sc_hd/spice
+
+

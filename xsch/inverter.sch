@@ -56,8 +56,13 @@ sa=0 sb=0 sd=0
 model=pfet_01v8
 spiceprefix=X
 }
-C {vsource.sym} -160 40 0 0 {name=V1 value=1.8 savecurrent=false}
-C {vsource.sym} -20 40 0 0 {name=V2 value=2 savecurrent=false}
+C {vsource.sym} -160 40 0 0 {name=V1 
+value=1.8 
+savecurrent=false}
+C {vsource.sym} -20 40 0 0 {name=V2 
+*value=2 
+value = "PULSE(0 1.8 1n 10p 10p 4n 10n)"
+savecurrent=false}
 C {lab_pin.sym} -20 -30 0 0 {name=p1 sig_type=std_logic lab=in}
 C {lab_pin.sym} 200 -30 2 0 {name=p2 sig_type=std_logic lab=out}
 C {gnd.sym} -20 120 0 0 {name=l1 lab=0}
@@ -74,7 +79,8 @@ C {code.sym} 190 20 0 0 {name=spice only_toplevel=false value="
 .option savecurrents
 .control
 save all
-dc v2 0 1.8 0.01
+*dc v2 0 1.8 0.01
+tran 10ps 10ns
 plot in out
 op
 .endc
